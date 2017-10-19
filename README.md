@@ -3,7 +3,9 @@
 ## Starting Docker Image
 
 ```shell
-$ docker run -d --name=wstunnel --hostname=wstunnel.example.com -p 8022 -p 8080 -restart always --env SERVER=example.com takuyao/wstunnel:latest
+$ docker run -d --name=wstunnel --hostname=wstunnel.example.com \
+	-p 8022 -p 8080 -restart always \
+	--env SERVER=example.com takuyao/wstunnel:latest
 ```
 
 ### Forwarding Ports
