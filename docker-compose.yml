@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+# GitHub
+#  https://github.com/mhzed/wstunnel
+#
+
+version: '2'
+services:
+  wstunnel:
+    build:
+      context: .
+      #args:
+      # .envから読む Dockerfileで使う
+      #- SERVER=${SERVER}
+    image: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    restart: always
+    environment:
+    #Project Variables  docker-composeでは.envファイルから読む
+    - SERVER=${SERVER}
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+#    ports:
+#     - "8022:8022"
+#     - "8080:8080"
